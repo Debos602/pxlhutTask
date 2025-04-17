@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "12345-abcd-auth-payments",
+    "name": "pxlhut-task-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John\",\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "https://task-pxl-hut.vercel.app/api/auth/register",
+              "host": ["https://task-pxl-hut.vercel.app"],
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "https://task-pxl-hut.vercel.app/api/auth/login",
+              "host": ["https://task-pxl-hut.vercel.app"],
+              "path": ["api", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Get Current User",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{user_token}}"
+              }
+            ],
+            "url": {
+              "raw": "https://task-pxl-hut.vercel.app/api/auth/me",
+              "host": ["https://task-pxl-hut.vercel.app"],
+              "path": ["api", "auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "Get Admin Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{admin_token}}"
+              }
+            ],
+            "url": {
+              "raw": "https://task-pxl-hut.vercel.app/api/auth/admin",
+              "host": ["https://task-pxl-hut.vercel.app"],
+              "path": ["api", "auth", "admin"]
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refresh_token}}\"\n}"
+            },
+            "url": {
+              "raw": "https://task-pxl-hut.vercel.app/api/auth/refresh-token",
+              "host": ["https://task-pxl-hut.vercel.app"],
+              "path": ["api", "auth", "refresh-token"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "Checkout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 1000,\n  \"userId\": \"123456\",\n  \"items\": [\"item1\", \"item2\"]\n}"
+            },
+            "url": {
+              "raw": "https://task-pxl-hut.vercel.app/api/payments/checkout",
+              "host": ["https://task-pxl-hut.vercel.app"],
+              "path": ["api", "payments", "checkout"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -151,7 +151,7 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
 
 const getUserFromDb = async (req: Request, res: Response) => {
   try {
-    const userId = req.user._id; // Assuming you're attaching user ID to req.user after authentication
+    const userId = req.body._id; // Assuming you're attaching user ID to req.user after authentication
     const user = await UserServices.getUser(userId);
     res.status(200).json({
       success: true,
