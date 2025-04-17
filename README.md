@@ -6,7 +6,7 @@ A web application for managing authenticatiom, including features for login,regi
 
 - **User Authentication**: Users can sign up, log in, and manage their accounts (user/admin).
 - **Payment system**: Here is amarpay payment system, and store payment history in database.
-- 
+  
 ## Live URL
 
 You can view the live project at: [Project Live URL](https://task-pxl-hut.vercel.app)
